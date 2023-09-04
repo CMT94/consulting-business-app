@@ -1,0 +1,59 @@
+.about {
+  background-color: var(--light);
+  margin: auto;
+  padding: 8rem 1rem 0 1rem;
+  width: 100%;
+}
+
+.about h2 {
+  font-size: 3rem;
+}
+
+.aboutContainer {
+  width: 1240px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.col_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+}
+
+.col_2 p:first-of-type {
+  margin: 2rem 0;
+}
+
+.col_2 p:nth-child(4) {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.button {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 940px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .aboutContainer img {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .col_2 {
+    padding: 0;
+  }
+
+  .button {
+    margin-bottom: 1rem;
+  }
+}
