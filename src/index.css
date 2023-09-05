@@ -5,7 +5,10 @@
   --secondary-dark: #e3d002;
   --white: #ffffff;
   --light: #f8f8f8;
+  --light-grey: #eee;
+  --grey: #787878;
   --dark: #0f0f0f;
+  --black: #000;
   --overlay: rgba(0, 0, 0, 0.7);
 }
 
