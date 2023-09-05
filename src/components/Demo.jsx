@@ -27,9 +27,9 @@ const Demo = () => {
             height="320"
             src="https://www.youtube.com/embed/xm3YgoEiEDc?si=a134IG67V_m7-znS"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>

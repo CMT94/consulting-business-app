@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.header_bg {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;

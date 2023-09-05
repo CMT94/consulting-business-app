@@ -11,8 +11,22 @@ const Navbar = () => {
   const [isMenuDisplayed, setIsMenuDisplayed] = React.useState(false);
   const toggleMenu = () => setIsMenuDisplayed((prevState) => !prevState);
 
+  const [colorBg, setColorBg] = React.useState(false);
+  const changeBgColor = () => {
+    if (window.scrollY >= 850) {
+      setColorBg(true);
+    } else {
+      setColorBg(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", changeBgColor);
+    // return () => window.removeEventListener("scroll", changeBgColor);
+  }, []);
+
   return (
-    <div className={classes.header}>
+    <div className={`${classes.header} ${colorBg ? classes.header_bg : ""}`}>
       <div className={classes.navbar}>
         <a href="/">
           <img src={Logo} className={classes.logo} alt="logo" />
