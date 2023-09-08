@@ -36,7 +36,7 @@ const users = [
 
 const Testimonials = () => {
   return (
-    <div className={classes.testimonials}>
+    <div className={classes.testimonials} id="testimonials">
       <div className={classes.testimonialsContainer}>
         <h2>Testimonials</h2>
         <span className={globalClasses.line}></span>

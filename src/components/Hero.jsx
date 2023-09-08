@@ -5,7 +5,7 @@ import globalClasses from "./../global.module.css";
 
 const Hero = () => {
   return (
-    <div className={classes.hero}>
+    <div className={classes.hero} id="home">
       <div className={classes.content}>
         <p>Call us</p>
         <p>1-800-123-4567</p>
