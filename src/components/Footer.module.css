@@ -22,6 +22,7 @@
 
 .footer ul li a {
   color: var(--light);
+  cursor: pointer;
 }
 
 .footer ul li a:hover {
