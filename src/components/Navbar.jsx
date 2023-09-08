@@ -3,18 +3,21 @@ import React from "react";
 import Logo from "./../assets/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import { Link } from "react-scroll";
+
 import classes from "./Navbar.module.css";
 
 const navLinks = [
-  { title: "Home", href: "home" },
-  { title: "About", href: "about" },
-  { title: "Testimonials", href: "testimonials" },
-  { title: "Demo", href: "demo" },
+  { title: "Home", href: "home", offset: 0 },
+  { title: "About", href: "about", offset: 0 },
+  { title: "Testimonials", href: "testimonials", offset: -50 },
+  { title: "Demo", href: "demo", offset: 0 },
 ];
 
 const Navbar = () => {
   const [isMenuDisplayed, setIsMenuDisplayed] = React.useState(false);
   const toggleMenu = () => setIsMenuDisplayed((prevState) => !prevState);
+  const closeMobileMenu = () => setIsMenuDisplayed(false);
 
   const [colorBg, setColorBg] = React.useState(false);
   const changeBgColor = () => {
@@ -33,9 +36,9 @@ const Navbar = () => {
   return (
     <div className={`${classes.header} ${colorBg ? classes.header_bg : ""}`}>
       <div className={classes.navbar}>
-        <a href="/">
+        <Link to={"home"} smooth={true} offset={0} duration={500}>
           <img src={Logo} className={classes.logo} alt="logo" />
-        </a>
+        </Link>
 
         <div className={classes.burgerContainer}>
           {!isMenuDisplayed ? (
@@ -48,14 +51,17 @@ const Navbar = () => {
           className={isMenuDisplayed ? classes.navMenuActive : classes.navMenu}
         >
           {navLinks.map((link) => (
-            <li
-              key={link.title}
-              className={classes.navItem}
-              onClick={toggleMenu}
-            >
-              <a href={`#${link.href}`} className={classes.link}>
+            <li key={link.title} className={classes.navItem}>
+              <Link
+                to={link.href}
+                smooth={true}
+                offset={link.offset}
+                duration={500}
+                className={classes.link}
+                onClick={closeMobileMenu}
+              >
                 {link.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
