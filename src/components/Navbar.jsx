@@ -22,7 +22,7 @@ const Navbar = () => {
 
   React.useEffect(() => {
     window.addEventListener("scroll", changeBgColor);
-    // return () => window.removeEventListener("scroll", changeBgColor);
+    return () => window.removeEventListener("scroll", changeBgColor);
   }, []);
 
   return (
