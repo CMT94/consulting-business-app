@@ -5,7 +5,7 @@ import classes from "./Demo.module.css";
 
 const Demo = () => {
   return (
-    <div className={classes.demo}>
+    <div className={classes.demo} id="demo">
       <div className={classes.demoContainer}>
         <div className={classes.col_1}>
           <p>More than 100 Financial Planners,</p>

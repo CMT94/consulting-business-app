@@ -5,7 +5,12 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 import classes from "./Navbar.module.css";
 
-const navLinks = ["Home", "About", "Testimonials", "Demo"];
+const navLinks = [
+  { title: "Home", href: "home" },
+  { title: "About", href: "about" },
+  { title: "Testimonials", href: "testimonials" },
+  { title: "Demo", href: "demo" },
+];
 
 const Navbar = () => {
   const [isMenuDisplayed, setIsMenuDisplayed] = React.useState(false);
@@ -43,9 +48,13 @@ const Navbar = () => {
           className={isMenuDisplayed ? classes.navMenuActive : classes.navMenu}
         >
           {navLinks.map((link) => (
-            <li key={link} className={classes.navItem}>
-              <a href="/" className={classes.link}>
-                {link}
+            <li
+              key={link.title}
+              className={classes.navItem}
+              onClick={toggleMenu}
+            >
+              <a href={`#${link.href}`} className={classes.link}>
+                {link.title}
               </a>
             </li>
           ))}
